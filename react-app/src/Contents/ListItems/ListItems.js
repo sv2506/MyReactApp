@@ -40,13 +40,13 @@ function ListItems(props){
                     <div class="item-img" style={{backgroundImage:'url('+ item.url + ')'}} 
                     onClick={() => handleClick(item.id, props.type)}
                     data-tip data-for={item.name}></div>
-                    <ReactTooltip id={item.name} place="top">
+                    <ReactTooltip key={item.id} id={item.name} place="top">
                         <span>Click for more information</span>
                     </ReactTooltip>
                     <div class="item-info">
                         <div class="item-name">
                             <h4 value={item.id} onClick={() => handleClick(item.id, props.type)} data-tip data-for={item.name}>{item.name}</h4>
-                            <ReactTooltip id={item.name} place="top">
+                            <ReactTooltip key={item.id} id={item.name} place="top">
                                 <span>Click for more information</span>
                             </ReactTooltip>
                         </div>
@@ -57,6 +57,7 @@ function ListItems(props){
                         <div class="item-genre">
                             <Genre data={item.genre} />
                             <button onClick={() => {searchTrailer(item.name)}}>Watch Trailer</button>
+                            {props.type === "tv" && <button style={{marginLeft:"20px"}} onClick={() => handleClick(item.id, props.type)}>Watch Now</button>}
                         </div>
                     </div>
                 </div>

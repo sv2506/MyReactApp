@@ -13,7 +13,7 @@ function GetTrendingList(props){
         // Iterate over the results and retrieve only the information that we want to display
         const myList = results.results.map((item) => {
             const url = process.env.REACT_APP_POSTER_URL + item.poster_path
-            const name= item.title || item.name
+            const name= item.title || item.name // For movie, there is title; for tv, it is name
             const rating = item.vote_average
             const genre = item.genre_ids
             const id = item.id
