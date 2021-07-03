@@ -1,0 +1,17 @@
+.content-container {
+  height: auto;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.movies {
+  background-color: silver;
+  text-align: center;
+}
+
+.tv {
+  background-color: lightslategray;
+  text-align: center;
+}
