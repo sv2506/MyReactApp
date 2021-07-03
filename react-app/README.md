@@ -68,3 +68,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Additional Information:
+
+1. Need to install react-tooltip. Use command - npm install react-tooltip
+2. The URLs and APIs have been set as environment variables, will have to add your own before execution. The mapping is as follows:
+      (i)   REACT_APP_MOVIEDB_URL = https://api.themoviedb.org/3/trending/
+      (ii)  REACT_APP_POSTER_URL = https://image.tmdb.org/t/p/w500
+      (iii) REACT_APP_IMDB_URL = https://www.imdb.com/title/
+      (iv)  REACT_APP_MOVIEDB_DETAIL_URL = https://api.themoviedb.org/3/
+      (v)   REACT_APP_YOUTUBE_URL = https://www.youtube.com/results?search_query=
+      (vi)  REACT_APP_API_KEY - Need to create your own. Can be created at themoviedb.org
+3. Component Structure:
+      -> Index.js
+          -> App.js
+              -> Contents.js
+                    -> GetTrendingList.js
+                          -> ListItems.js
+                              -> Genre.js
+      
+
+
