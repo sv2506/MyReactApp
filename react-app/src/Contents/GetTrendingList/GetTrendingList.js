@@ -3,7 +3,7 @@ import ListItems from '../ListItems/ListItems'
 
 function GetTrendingList(props){
     // Generate the url based on what list we want to retrieve - Movie or TV
-    const url = "https://api.themoviedb.org/3/trending/" + props.type + "/day?api_key=" + process.env.REACT_APP_API_KEY
+    const url = process.env.REACT_APP_MOVIEDB_URL + props.type + "/day?api_key=" + process.env.REACT_APP_API_KEY
     const [dataList, setDataList] = useState([])
 
     // Function that requests the API for the trending movie list for the day
@@ -12,7 +12,7 @@ function GetTrendingList(props){
         const results = await response.json()
         // Iterate over the results and retrieve only the information that we want to display
         const myList = results.results.map((item) => {
-            const url = "https://image.tmdb.org/t/p/w500" + item.poster_path
+            const url = process.env.REACT_APP_POSTER_URL + item.poster_path
             const name= item.title || item.name
             const rating = item.vote_average
             const genre = item.genre_ids
@@ -30,7 +30,7 @@ function GetTrendingList(props){
 
     return <React.Fragment>
         {/* Call another component to display the list of movies/tv */}
-        <ListItems itemList={dataList}/>
+        <ListItems itemList={dataList} type={props.type}/>
     </React.Fragment>
 }
 
