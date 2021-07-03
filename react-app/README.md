@@ -86,6 +86,8 @@ Additional Information:
                     -> GetTrendingList.js
                           -> ListItems.js
                               -> Genre.js
+                    
+4. Application will run on localhost:3000
       
 
 
