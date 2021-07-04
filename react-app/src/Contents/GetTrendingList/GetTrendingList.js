@@ -3,7 +3,9 @@ import ListItems from '../ListItems/ListItems'
 
 function GetTrendingList(props){
     // Generate the url based on what list we want to retrieve - Movie or TV
-    const url = process.env.REACT_APP_MOVIEDB_URL + props.type + "/day?api_key=" + process.env.REACT_APP_API_KEY
+    const window = (props.for) ? "day" : "week"
+    // const url = process.env.REACT_APP_MOVIEDB_URL + props.type + "/day?api_key=" + process.env.REACT_APP_API_KEY
+    const url = process.env.REACT_APP_MOVIEDB_URL + props.type + "/" + window + "?api_key=" + process.env.REACT_APP_API_KEY + "&page=" + props.page
     const [dataList, setDataList] = useState([])
 
     // Function that requests the API for the trending movie list for the day
@@ -26,7 +28,7 @@ function GetTrendingList(props){
     // This hook will invoke the getMovies function on initial page load
     useEffect(() => {
         getData()
-    }, [])
+    }, [window, props.page])
 
     return <React.Fragment>
         {/* Call another component to display the list of movies/tv */}

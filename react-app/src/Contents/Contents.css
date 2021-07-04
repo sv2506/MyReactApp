@@ -15,3 +15,30 @@
   background-color: lightslategray;
   text-align: center;
 }
+
+.choice-bar {
+  width: 100vw;
+  height: 25px;
+  align-items: center;
+}
+.hoverable {
+  display: inline-block;
+  backface-visibility: hidden;
+  position: relative;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  transition-duration: 0.3s;
+  transition-property: transform;
+  padding: 0px 20px;
+}
+
+.hoverable:hover,
+.hoverable:active,
+.hoverable:focus {
+  transform: translateY(-5px);
+}
+.hoverable:hover:before,
+.hoverable:active:before,
+.hoverable:focus:before {
+  opacity: 1;
+  transform: translateY(-5px);
+}
